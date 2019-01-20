@@ -1,9 +1,27 @@
-<h1> 글자를 셀 수 있는 프로그램입니다</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
 
-<a href="{% url 'about' %}">프로그램에 대해서..</a>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Song+Myung" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'wordcount/style.css' %}">
+    </head>
 
-<form action="{% url 'count' %}">
-    <textarea cols="50" rows="10" name="fulltext"></textarea>
-    <br>
-    <input type="submit" value="글자세기">
-</form>
+    <body>
+
+       <h1> Django Wordcount Program</h1>
+        <h2>
+        <a href="{% url 'about' %}">About Program..</a>
+        </h2>
+       <form action="{% url 'count' %}">
+            <textarea class="form-control" rows="10" name="fulltext"></textarea>
+           <br>
+           <button type="submit" class="btn btn-success btn-lg btn-block">Count</button>
+       </form>
+
+    </body>
+
+</html>

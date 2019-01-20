@@ -1,0 +1,22 @@
+h1 {
+    color: green;
+    font-family: 'Lobster';
+    text-align: center;
+}
+h2 {
+    color: green;
+    font-family: 'Lobster';
+    text-align: center;
+    font-size:medium;
+}
+h3 {
+    color: red;
+    font-family: 'Lobster';
+    text-align: center;
+    font-size:x-large;
+}
+body {
+    font-family: 'Nanum Myeongjo', serif;
+    text-align: center;
+    background-color:aliceblue;
+}

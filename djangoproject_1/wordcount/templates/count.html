@@ -1,11 +1,27 @@
-<h1>입력한 텍스트는 {{ total }}개의 단어로 구성되어 있습니다.</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
 
-<a href="{% url 'home' %}">다시 입력하기</a>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Song+Myung" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'wordcount/style.css' %}">
+    </head>
 
-<h2>입력한 텍스트:</h2>
-{{ fulltext }}
-<h2>카운트한 단어:</h2>
-{% for word, countTotal in dictionary %}
-{{ word }} : {{ countTotal }}
-<br>
-{% endfor %}
+    <body>
+        <h1>Yours are consists of {{ total }} words.</h1>
+        <p>
+        <a href="{% url 'home' %}">Rewrite</a>
+        </p>
+        <h3>Text:</h3>
+        {{ fulltext }}
+        <h3>Words Counted:</h3>
+        {% for word, countTotal in dictionary %}
+        {{ word }} : {{ countTotal }}
+        <br>
+        {% endfor %}
+    </body>
+
+</html>
