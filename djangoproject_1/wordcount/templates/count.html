@@ -18,7 +18,7 @@
         <h3>Text:</h3>
         {{ fulltext }}
         <h3>Words Counted:</h3>
-        {% for word, countTotal in dictionary %}
+        {% for word, countTotal in sorted_dictionary %}
         {{ word }} : {{ countTotal }}
         <br>
         {% endfor %}
